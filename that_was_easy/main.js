@@ -10,3 +10,14 @@ function sayGood(){
 
 $("#easy").on("click", sayThatWasEasy);
 $("#good").on("click", sayGood);
+
+$(document).keypress(hitKey);
+
+function hitKey(event){
+    if(event.charCode == 32){
+        $("#easy").trigger("click");
+    }
+    if(event.charCode == 71){
+        $("#good").trigger("click");
+    }
+}
