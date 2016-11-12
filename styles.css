@@ -1,8 +1,13 @@
-img {
+#clock{
     width: 200px;
 }
-
 body{
     text-align: center;
     font: "Arial";
+}
+.space{
+    margin-top: 1000px
+}
+#warning{
+    width: 308px;
 }
