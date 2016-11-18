@@ -6,7 +6,7 @@ function setup(){
     isGameOver = false;
     createCanvas(250,250);
     player = createSprite(width/2, height-25, 50, 50);
-    enemy = createSprite(width/2, 0, 10, 30)
+    enemy = createSprite(random(5, width-5), 0, 10, 30)
 }
 
 function draw(){
@@ -41,4 +41,16 @@ function gameOver(){
     textAlign(CENTER);
     fill("white");
     text("Game Over!", width/2, height/2);
+    text("Click anywhere to try again", width/2, height*3/4);
+}
+
+function mouseClicked(){
+    if(isGameOver)
+    {
+        isGameOver = false;
+        player.position.x = width/2;
+        player.position.y = height-25;
+        enemy.position.x = random(5, width-5);
+        enemy.position.y = 0;
+    }
 }
