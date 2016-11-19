@@ -62,16 +62,23 @@ function gameOver(){
     text("Game Over!", width/2, height/2);
     text("Score: " + score, width/2, height*19/32);
     text("Click anywhere to try again", width/2, height*3/4);
+    if(keyDown(32)){
+        restartGame();
+    }
 }
 
 function mouseClicked(){
     if(isGameOver)
     {
-        isGameOver = false;
-        player.position.x = width/2;
-        player.position.y = height-(playerImage.height/2);
-        enemy.position.x = random(5, width-5);
-        enemy.position.y = 0;
-        score = 0;
+        restartGame();
     }
+}
+
+function restartGame(){
+    isGameOver = false;
+    player.position.x = width/2;
+    player.position.y = height-(playerImage.height/2);
+    enemy.position.x = random(5, width-5);
+    enemy.position.y = 0;
+    score = 0;
 }
