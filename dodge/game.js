@@ -6,9 +6,9 @@ var isGameOver;
 var bgImg;
 
 function preload(){
-    bgImg = loadImage("christophergeiger.me/dodge/img/bg.png")
-    playerImage = loadImage("christophergeiger.me/dodge/img/player.png");
-    enemyImage = loadImage("christophergeiger.me/dodge/img/rock.png");
+    bgImg = loadImage("http://christophergeiger.me/dodge/img/bg.png")
+    playerImage = loadImage("http://christophergeiger.me/dodge/img/player.png");
+    enemyImage = loadImage("http://christophergeiger.me/dodge/img/rock.png");
 }
 
 function setup(){
@@ -16,7 +16,7 @@ function setup(){
     createCanvas(256,256);
     player = createSprite(width/2, height-(playerImage.height/2), 0, 0);
     player.addImage(playerImage);
-    enemy = createSprite(random(5, width-5), 0, 10, 30)
+    enemy = createSprite(random(5, width-5), 0, 0, 0)
     enemy.addImage(enemyImage);
     enemy.rotationSpeed = 4.0;
 }
