@@ -60,7 +60,10 @@ function gameOver(){
     textAlign(CENTER);
     fill("white");
     text("Game Over!", width/2, height/2);
-    text("Score: " + score, width/2, height*19/32);
+    text("Score: ", (width/2)-4, height*19/32);
+    fill("red");
+    text(score, (width/2) + 22, height*19/32);
+    fill("white");
     text("Click anywhere to try again", width/2, height*3/4);
     if(keyDown(32)){
         restartGame();
