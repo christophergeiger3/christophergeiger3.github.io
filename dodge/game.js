@@ -1,9 +1,12 @@
+// Credit to https://workshops.hackclub.com/dodge/ where this workshop is found
+
 var player;
 var playerImage;
 var enemy;
 var enemyImage;
 var isGameOver;
 var bgImg;
+var score;
 
 function preload(){
     bgImg = loadImage("http://christophergeiger.me/dodge/img/bg.png")
@@ -19,6 +22,7 @@ function setup(){
     enemy = createSprite(random(5, width-5), 0, 0, 0)
     enemy.addImage(enemyImage);
     enemy.rotationSpeed = 4.0;
+    score = 0;
 }
 
 function draw(){
@@ -44,8 +48,10 @@ function draw(){
         if(enemy.position.y > height){
             enemy.position.x = random(5, width-5);
             enemy.position.y = 0;
-            
+            score++;
         }
+        fill("white");
+        text("Asteroids: " + score, width-90, 20);
     }
 }
 
@@ -54,6 +60,7 @@ function gameOver(){
     textAlign(CENTER);
     fill("white");
     text("Game Over!", width/2, height/2);
+    text("Score: " + score, width/2, height*19/32);
     text("Click anywhere to try again", width/2, height*3/4);
 }
 
@@ -65,5 +72,6 @@ function mouseClicked(){
         player.position.y = height-(playerImage.height/2);
         enemy.position.x = random(5, width-5);
         enemy.position.y = 0;
+        score = 0;
     }
 }
