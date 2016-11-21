@@ -6,8 +6,8 @@ $('#go').onclick = function(){
 };
 */
 
-document.getElementById("go").onclick = function() {
-    var inputText = document.getElementById("text-input").val();
+document.getElementById('go').onclick = function() {
+    var inputText = $('#text-input').val();
     var thugifiedText = inputText + ", dawg";
-    document.getElementById("output").innerHTML = thugifiedText;
+    document.getElementById('output').innerHTML = thugifiedText;
 };
