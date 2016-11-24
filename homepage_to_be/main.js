@@ -1,5 +1,20 @@
 // Inspired by https://p5js.org/examples/structure-setup-and-draw.html
 
+/*
+
+    TODO:
+    Add Pip boy
+    Add Name, email, title
+    Edit line glitch
+    Add startup visual effect
+    Add sidepanel glitch effect (right side transparent rectangle (purple?))
+    Add startup audio effect
+    Add typing effect (sync with pip boy)
+    Add links for the rest of the site
+    Change the rest of the site to black
+
+*/
+
 var y = [100, 300, 600];
 var terminalBlink = false;
 var TERMINAL_GREEN = "#007f00";
