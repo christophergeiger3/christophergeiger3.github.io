@@ -1,6 +1,6 @@
 // Inspired by https://p5js.org/examples/structure-setup-and-draw.html
 
-var y = [100, 125, 300, 450, 600];
+var y = [100, 300, 600];
 var terminalBlink = false;
 var TERMINAL_GREEN = "#007f00";
 var LINE_GLITCH = "#A9A9A9";
@@ -42,8 +42,6 @@ function staticLines() {
     y[0] -= 1.35;
     y[1] -= 0.75;
     y[2] -= 0.5;
-    y[3] -= 1.5;
-    y[4] -= 0.5;
     
     for(var x=0; x<y.length; x++)
     {
