@@ -3,7 +3,7 @@
 var y = [100, 125, 300, 450, 600];
 var terminalBlink = false;
 var TERMINAL_GREEN = "#007f00";
-
+var LINE_GLITCH = "#A9A9A9";
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -27,8 +27,14 @@ function terminal() {
     if(!terminalBlink){
         fill(color(TERMINAL_GREEN));
         stroke(color(TERMINAL_GREEN));
-        rect(20, 10, 15, 30);
+        rect(45, 34, 15, 30);
     }
+    
+    fill(TERMINAL_GREEN);
+    stroke(0);
+    textSize(27);
+    
+    text("$", 23, 60);
     
 }
 
@@ -44,9 +50,14 @@ function staticLines() {
         if(y[x]<0){
             y[x] = height;
         }
-        
-        stroke(255);
-        fill(255);
+        if(second()%3 == 0){
+            stroke(LINE_GLITCH);
+            stroke(LINE_GLITCH);
+        }
+        else{
+            stroke(255);
+            fill(255);
+        }
         line(0, y[x], width, y[x]);
         
     }
