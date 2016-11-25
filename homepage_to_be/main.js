@@ -3,6 +3,9 @@
 /*
 
     TODO:
+    
+    Convert video to gif
+    
     Add Pip boy
     Add Name, email, title
     Edit line glitch
