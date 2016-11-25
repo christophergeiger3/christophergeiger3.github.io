@@ -5,6 +5,8 @@
     TODO:
     
     Convert video to gif
+    Find a way to upload and display before website
+    display it
     
     Add Pip boy
     Add Name, email, title
