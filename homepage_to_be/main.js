@@ -18,18 +18,26 @@
 var y = [100, 300, 600];
 var terminalBlink = false;
 var TERMINAL_GREEN = "#007f00";
+var LINE = "#808080";
 var LINE_GLITCH = "#A9A9A9";
+var DELAY = 1000;
+
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
-    stroke(255)
-    frameRate(30)
+    setTimeout(function(){
+        createCanvas(windowWidth, windowHeight);
+        stroke(255);
+        frameRate(30);
+    }, DELAY);
+    
 }
 
 function draw(){
+    setTimeout(function(){
     background(0);
     terminal();
     staticLines();
+    }, DELAY);
 }
 
 function terminal() {
@@ -65,14 +73,13 @@ function staticLines() {
         }
         if(second()%3 == 0){
             stroke(LINE_GLITCH);
-            stroke(LINE_GLITCH);
+            fill(LINE_GLITCH);
         }
         else{
-            stroke(255);
-            fill(255);
+            stroke(LINE);
+            fill(LINE);
         }
         line(0, y[x], width, y[x]);
-        
     }
 }
 
