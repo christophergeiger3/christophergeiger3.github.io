@@ -25,7 +25,7 @@ var terminalBlink = false;
 var TERMINAL_GREEN = "#007f00";
 var LINE = "#808080";
 var LINE_GLITCH = "#A9A9A9";
-var DELAY = 1000;
+var DELAY = 15000;
 
 
 function setup() {
