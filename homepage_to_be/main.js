@@ -4,19 +4,13 @@
 
     TODO:
     
-    Convert video to gif
-    Find a way to upload and display before website
-    display it
     
     Add Pip boy
     Add Name, email, title
-    Edit line glitch
     Add startup visual effect
     Add sidepanel glitch effect (right side transparent rectangle (purple?))
-    Add startup audio effect
     Add typing effect (sync with pip boy)
     Add links for the rest of the site
-    Change the rest of the site to black
 
 */
 
@@ -26,6 +20,7 @@ var TERMINAL_GREEN = "#007f00";
 var LINE = "#808080";
 var LINE_GLITCH = "#A9A9A9";
 var DELAY = 15000;
+var pipGif;
 
 
 function setup() {
@@ -33,15 +28,19 @@ function setup() {
         createCanvas(windowWidth, windowHeight);
         stroke(255);
         frameRate(30);
+        // pipGif = loadImage('http://christophergeiger.me/fallout4assets/animation.gif');
+        
     }, DELAY);
     
 }
 
 function draw(){
     setTimeout(function(){
-    background(0);
-    terminal();
-    staticLines();
+        background(0);
+        terminal();
+        staticLines();
+    
+    
     }, DELAY);
 }
 
