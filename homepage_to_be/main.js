@@ -19,17 +19,19 @@ var terminalBlink = false;
 var TERMINAL_GREEN = "#007f00";
 var LINE = "#808080";
 var LINE_GLITCH = "#A9A9A9";
-var DELAY = 15000;
+var DELAY = 15000; //Change to 15000
+//var h1;
 var pipGif;
-
 
 function setup() {
     setTimeout(function(){
         createCanvas(windowWidth, windowHeight);
         stroke(255);
         frameRate(30);
-        // pipGif = loadImage('http://christophergeiger.me/fallout4assets/animation.gif');
-        
+        pipGif = loadGif('resizedAnimation.gif');
+        //pipGif = createImg('http://christophergeiger.me/fallout4assets/animation.gif');
+        //h1 = createElement('h1', 'Lorem ipsum text text text');
+        //h1.position(100, 100);
     }, DELAY);
     
 }
@@ -39,8 +41,11 @@ function draw(){
         background(0);
         terminal();
         staticLines();
-    
-    
+        
+        // load pipboy
+        if(pipGif.loaded()){
+        image(pipGif, (width/2)-(pipGif.width/2), height*1/10);
+        }
     }, DELAY);
 }
 
