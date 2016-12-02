@@ -14,6 +14,7 @@
 
 */
 
+
 var y = [100, 300, 600];
 var terminalBlink = false;
 var TERMINAL_GREEN = "#007f00";
@@ -41,6 +42,7 @@ function draw(){
         background(0);
         terminal();
         staticLines();
+        addText();
         
         // load pipboy
         if(pipGif.loaded()){
@@ -92,7 +94,15 @@ function staticLines() {
     }
 }
 
-
+function addText(){
+    // Add me!
+    fill(TERMINAL_GREEN);
+    stroke(0);
+    textSize(27);
+    // (width/2)-(pipGif.width/2), height*1/10 -> Location of Pipboy
+    textAlign(CENTER);
+    text("Christopher Geiger", width/2, height*6/10);
+}
 
 
 
