@@ -3,10 +3,15 @@
 // Initialize buttons
 var recButton, circButton, sqButton, lineButton;
 // The level at which all the spawn buttons are vertically alligned upon
-    var BUTTON_Y_ALLIGNMENT = 20;
+var BUTTON_Y_ALLIGNMENT = 20;
 // The distance each button is horizontally spaced from each other
 var BUTTON_OFFSET = 60;
 var BACKGROUND_COLOR = '#FDF3E7';
+
+var rectangles = [];
+var circles = [];
+var squares = [];
+var lines = [];
 
 
 function setup() {
@@ -55,4 +60,27 @@ function spawnSquare() {
 
 function spawnLine() {
     // body...
+}
+
+
+// Constructor functions...
+
+function MyRectangle(){
+    this.x = width/2;
+    this.y = height/2;
+}
+
+function MyCircle(){
+    this.x = width/2;
+    this.y = height/2;
+}
+
+function MySquare(){
+    this.x = width/2;
+    this.y = height/2;
+}
+
+function MyLine(){
+    this.x = width/2;
+    this.y = height/2;
 }
