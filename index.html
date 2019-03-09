@@ -309,7 +309,7 @@ body {
                         </ul>
                         <!-- fieldsets -->
                         <fieldset>
-                            <h2 class="fs-title">Welcome</h2>
+                            <h2 class="fs-title">Welcome to NetCare</h2>
                             <h3 class="fs-subtitle">Let's get started</h3>
                             <input type="button" name="next" class="next action-button" value="Start"/>
                         </fieldset>
@@ -336,9 +336,9 @@ body {
                         <fieldset>
                             <h2 class="fs-title">Chief Complaints</h2>
                             <p id="formtext">Click on the area of concern</p> 
-                            <div id="container">
+                            <div id="container" class="customthing">
                             <div class="row">
-                            <div class="col-md-8" style="height: 15em;"><textarea style="height: 100%;" name="chief" placeholder="Chief complaints" style="resize:none"></textarea></div>
+                            <div class="col-md-8" style="height: 15em;"><textarea style="height: 100%;" name="chief" placeholder="Describe your concerns" style="resize:none"></textarea></div>
                             <div class="col-md-auto" style="height: 15em;">
                                 <canvas id="chooser" width="87" height="200">
                                     <img src="Human_body_silhouette.svg" id="bdy" height="200">
@@ -346,17 +346,33 @@ body {
                                 </canvas>
                             </div>
                           </div>
+                          </div>
                             <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
                             <input type="button" name="next" class="next action-button" value="Next"/>
                         </fieldset>
                         <fieldset>
                             <h2 class="fs-title">Details</h2>
-                            <h3 class="fs-subtitle">Fill in your credentials</h3>
-                            <input type="text" name="email" placeholder="Email"/>
-                            <input type="password" name="pass" placeholder="Password"/>
-                            <input type="password" name="cpass" placeholder="Confirm Password"/>
-                            <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                            <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+                            <h3 class="fs-subtitle">It looks like you have a respiratory problem</h3>
+                            <label for="symptime" style="color:#000;">How long has it been since you first noticed symptoms?</label>
+                            <label class="radio-inline" style="color:#000;text-align:left;"><input type="radio" style="text-align:left;width:auto;" name="optradio">&lt; 24 hours</label>
+                            <label class="radio-inline" style="color:#000;text-align:left;"><input type="radio" style="text-align:left;width:auto;" name="optradio">1-7 days</label>
+                            <label class="radio-inline" style="color:#000;text-align:left;"><input type="radio" style="text-align:left;width:auto;" name="optradio">1-3 weeks</label> 
+                            <label class="radio-inline" style="color:#000;text-align:left;"><input type="radio" style="text-align:left;width:auto;" name="optradio">Longer</label> 
+                            <label for="symptime" style="color:#000;">If your cough produces mucous, what color is it?</label><br />
+                            <label class="radio-inline" style="color:#000;text-align:left;"><input type="radio" style="text-align:left;width:auto;" name="optradio">None</label>
+                            <label class="radio-inline" style="color:#000;text-align:left;"><input type="radio" style="text-align:left;width:auto;" name="optradio">Clear</label>
+                            <label class="radio-inline" style="color:#000;text-align:left;"><input type="radio" style="text-align:left;width:auto;" name="optradio">Yellow</label> 
+                            <label class="radio-inline" style="color:#000;text-align:left;"><input type="radio" style="text-align:left;width:auto;" name="optradio">Green</label> 
+                            <label for="symptime" style="color:#000;">If you listed any medication, has it helped?</label><br />
+                            <label class="radio-inline" style="color:#000;text-align:left;"><input type="radio" style="text-align:left;width:auto;" name="optradio">Yes</label>
+                            <label class="radio-inline" style="color:#000;text-align:left;"><input type="radio" style="text-align:left;width:auto;" name="optradio">No</label>
+                            <label for="prevcondition" style="color:#000;">What previous respiratory conditions have you had?</label>
+                            <input type="text" name="prevcondition" placeholder="Previous respiratory conditions"/>
+                            <input type="next" name="next" class="next action-button" value="Submit" style="text-align:center;"/>
+                        </fieldset>
+                        <fieldset>
+                            <h2 style="color:#000;">Thank you</h2>
+                            <h3 style="color:#000;">Your doctor will contact you shortly.</h3>
                         </fieldset>
                     </form>
                 </div>
@@ -376,12 +392,12 @@ body {
             
             current_fs = $(this).parent();
             next_fs = $(this).parent().next();
-            
+
             //activate next step on progressbar using the index of next_fs
             $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
             
             //show the next fieldset
-            next_fs.show(); 
+            next_fs.show();
             //hide the current fieldset with style
             current_fs.animate({opacity: 0}, {
                 step: function(now, mx) {
