@@ -8,7 +8,71 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>The Big Picture - Start Bootstrap Template</title>
+  <title>Diagnoser</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600" rel="stylesheet">  
+  <style>
+			body, html {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+				font-family: 'Open Sans', sans-serif;
+				color: #eee;
+			}
+			.bg {
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+				filter: blur(5px) saturate(30%) brightness(0.7);
+				overflow: hidden;
+				z-index:-10;
+			}
+			.bgcover {
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+				background-color: #5b91ff;
+				opacity: 0.3;
+				z-index:-5;
+			}
+			#content {
+				font-size: 28px;
+				font-weight: 200;
+			}
+			.heading {
+				font-size: 48px;
+			}
+			#content > p {
+				text-align: center;
+			}
+			.textbox {
+				border-width: 1px;
+				border-color: #ccc;
+				height: 1.5em;
+				width: 250px;
+				font-size: 24px;
+				font-weight: 300;
+				color: #333;
+				padding: 8px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.input {
+				width: 300px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		</style>
+
+
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -50,6 +114,7 @@
 
   <!-- Page Content -->
   <section>
+    <!--
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
@@ -58,6 +123,20 @@
         </div>
       </div>
     </div>
+    -->
+    <body>
+      <img src="adult-career-clipboard-1919236.jpg" class="bg" />
+      <div class="bgcover"></div>
+      <div style="display:flex;justify-content:center;align-items:center;width:100%;height:100%;">
+        <div id="content">
+          <p class="heading">Welcome to this thing</p>
+          <p>To start, enter your name</p>
+          <div id="name" class="input">
+            <input type="text" autofocus class="textbox" />
+          </div>
+        </div>
+      </div>
+    </body>
   </section>
 
   <!-- Bootstrap core JavaScript -->
