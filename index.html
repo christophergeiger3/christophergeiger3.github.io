@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Bootstrap MultiStep Form</title>
+    <title>NetCare</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -205,7 +205,7 @@ body {
     color: white;
     text-transform: uppercase;
     font-size: 9px;
-    width: 33.33%;
+    width: 20%; /* CHANGE HERER WHEN ADDING OR REMOVING PAGES */
     float: left;
     position: relative;
     letter-spacing: 1px;
@@ -249,8 +249,39 @@ body {
     color: white;
 }
     </style>
+    <style>
+        #pain {
+            visibility: hidden;
+            position: absolute;
+            width: 12px;
+            height: 12px;
+        }
+        #body {
+            height: 1000px;
+            width: auto;
+        }
+        #choose {
+            width: 100%;
+            height: 100%
+        }
+        #formtext {
+          color: #000000 !important;
+        }
+    </style>
+    <script>
+        function loaded(){
+            document.getElementById("choose").addEventListener("click", function(e){
+                p = document.getElementById("pain");
+                p.style.visibility = "visible";
+                r = document.getElementById("choose").getBoundingClientRect();
+                q = document.getElementById("body").getBoundingClientRect();
+                p.style.top = e.pageY - 6 - r.top + "px";
+                p.style.left = e.pageX - 6 - q.left + "px";
+            });
+        }
+    </script>
 </head>
-<body>
+<body onload="loaded()">
         <img src="adult-career-clipboard-1919236.jpg" class="bg" />
         <div class="bgcover"></div>
         <div class="row">
@@ -258,25 +289,51 @@ body {
                     <form id="msform">
                         <!-- progressbar -->
                         <ul id="progressbar">
-                            <li class="active">Personal Details</li>
-                            <li>Social Profiles</li>
-                            <li>Account Setup</li>
+                            <li class="active">Welcome</li>
+                            <li>Demographics</li>
+                            <li>History</li>
+                            <li>Chief Complaint</li>
+                            <li>Details</li>
                         </ul>
                         <!-- fieldsets -->
                         <fieldset>
-                            <h2 class="fs-title">Personal Details</h2>
-                            <h3 class="fs-subtitle">Tell us something more about you</h3>
-                            <input type="text" name="fname" placeholder="First Name"/>
-                            <input type="text" name="lname" placeholder="Last Name"/>
-                            <input type="text" name="phone" placeholder="Phone"/>
+                            <h2 class="fs-title">Welcome</h2>
+                            <h3 class="fs-subtitle">Let's get started</h3>
+                            <input type="button" name="next" class="next action-button" value="Start"/>
+                        </fieldset>
+                        <fieldset>
+                            <h2 class="fs-title">Personal Information</h2>
+                            <input type="text" name="name" placeholder="Name"/>
+                            <input type="text" name="dob" placeholder="Date of birth"/>
+                            <input type="text" name="insuranceco" placeholder="Insurance company"/>
+                            <input type="text" name="insuranceno" placeholder="Insurance number"/>
+                            <input type="text" name="groupno" placeholder="Group number"/>
+                            <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
                             <input type="button" name="next" class="next action-button" value="Next"/>
                         </fieldset>
                         <fieldset>
-                            <h2 class="fs-title">Social Profiles</h2>
-                            <h3 class="fs-subtitle">Your presence on the social network</h3>
-                            <input type="text" name="twitter" placeholder="Twitter"/>
-                            <input type="text" name="facebook" placeholder="Facebook"/>
-                            <input type="text" name="gplus" placeholder="Google Plus"/>
+                            <h2 class="fs-title">History</h2>
+                            <input type="text" name="surgical" placeholder="Surgical history"/>
+                            <input type="text" name="social" placeholder="Social history (travel, alcohol/drugs, housemates)"/>
+                            <input type="text" name="family" placeholder="Family history"/>
+                            <input type="text" name="meds" placeholder="Current medications"/>
+                            <input type="text" name="allergies" placeholder="Allergies"/>
+                            <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                            <input type="button" name="next" class="next action-button" value="Next"/>
+                        </fieldset>
+                        <fieldset>
+                            <h2 class="fs-title">Chief Complaints</h2>
+                            <p id="formtext">Click on the area of concern</p> 
+                            <div id="container">
+                            <div class="row">
+                            <div class="col-md-9" style="height: 15em;"><textarea style="height: 100%;" name="chief" placeholder="Chief complaints" style="resize:none"></textarea></div>
+                            <div class="col-md-2" style="height: 15em;">
+                                <div id="choose" style="height: 100%;">
+                                    <img id="body" style="height: 100%;" src="Human_body_silhouette.svg"/>
+                                    <img id="pain" src="cursor.png">
+                                </div>
+                            </div>
+                          </div>
                             <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
                             <input type="button" name="next" class="next action-button" value="Next"/>
                         </fieldset>
