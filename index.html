@@ -270,15 +270,27 @@ body {
     </style>
     <script>
         function loaded(){
-            document.getElementById("choose").addEventListener("click", function(e){
-                p = document.getElementById("pain");
-                p.style.visibility = "visible";
-                r = document.getElementById("choose").getBoundingClientRect();
-                q = document.getElementById("body").getBoundingClientRect();
-                p.style.top = e.pageY - 6 - r.top + "px";
-                p.style.left = e.pageX - 6 - q.left + "px";
-            });
-        }
+                var canvas = document.getElementById("chooser");
+                var ctx = canvas.getContext("2d");
+                var img = document.getElementById("bdy");
+                ctx.drawImage(img,0,0,87,200);
+                
+                elemLeft = canvas.offsetLeft,
+                elemTop = canvas.offsetTop;
+
+                // Add event listener for `click` events.
+                canvas.addEventListener('click', function(event) {
+                    var x = event.pageX - elemLeft,
+                        y = event.pageY - elemTop;
+                        console.log(elemLeft + ", " + elemTop + " | " + x + ", " + y);
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        var img = document.getElementById("bdy");
+                        ctx.drawImage(img,0,0,87,200);
+                        var pain = document.getElementById("pain");
+                        r = canvas.getBoundingClientRect();
+                        ctx.drawImage(pain, event.clientX - r.left -5, event.clientY - r.top - 5, 10, 10);
+                }, false);
+            }
     </script>
 </head>
 <body onload="loaded()">
@@ -326,19 +338,19 @@ body {
                             <p id="formtext">Click on the area of concern</p> 
                             <div id="container">
                             <div class="row">
-                            <div class="col-md-9" style="height: 15em;"><textarea style="height: 100%;" name="chief" placeholder="Chief complaints" style="resize:none"></textarea></div>
-                            <div class="col-md-2" style="height: 15em;">
-                                <div id="choose" style="height: 100%;">
-                                    <img id="body" style="height: 100%;" src="Human_body_silhouette.svg"/>
-                                    <img id="pain" src="cursor.png">
-                                </div>
+                            <div class="col-md-8" style="height: 15em;"><textarea style="height: 100%;" name="chief" placeholder="Chief complaints" style="resize:none"></textarea></div>
+                            <div class="col-md-auto" style="height: 15em;">
+                                <canvas id="chooser" width="87" height="200">
+                                    <img src="Human_body_silhouette.svg" id="bdy" height="200">
+                                    <img src="cursor.png" id="pain" height="10" width="10">
+                                </canvas>
                             </div>
                           </div>
                             <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
                             <input type="button" name="next" class="next action-button" value="Next"/>
                         </fieldset>
                         <fieldset>
-                            <h2 class="fs-title">Create your account</h2>
+                            <h2 class="fs-title">Details</h2>
                             <h3 class="fs-subtitle">Fill in your credentials</h3>
                             <input type="text" name="email" placeholder="Email"/>
                             <input type="password" name="pass" placeholder="Password"/>
