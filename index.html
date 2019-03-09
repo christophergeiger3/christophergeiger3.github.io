@@ -287,7 +287,7 @@ body {
                         ctx.drawImage(img,0,0,87,200);
                         var pain = document.getElementById("pain");
                         r = canvas.getBoundingClientRect();
-                        ctx.drawImage(pain, event.clientX - r.left -5, event.clientY - r.top - 5, 10, 10);
+                        ctx.drawImage(pain, event.clientX - r.left -7, event.clientY - r.top - 7, 14, 14);
                 }, false);
             }
     </script>
@@ -338,11 +338,11 @@ body {
                             <p id="formtext">Click on the area of concern</p> 
                             <div id="container" class="customthing">
                             <div class="row">
-                            <div class="col-md-8" style="height: 15em;"><textarea style="height: 100%;" name="chief" placeholder="Describe your concerns" style="resize:none"></textarea></div>
+                            <div class="col-md-8" style="height: 15em;"><textarea style="height: 100%;resize:none;" name="chief" placeholder="Describe your concerns" style="resize:none"></textarea></div>
                             <div class="col-md-auto" style="height: 15em;">
                                 <canvas id="chooser" width="87" height="200">
                                     <img src="Human_body_silhouette.svg" id="bdy" height="200">
-                                    <img src="cursor.png" id="pain" height="10" width="10">
+                                    <img src="cursor.png" id="pain" height="14" width="14">
                                 </canvas>
                             </div>
                           </div>
@@ -371,6 +371,7 @@ body {
                             <div id="block" style="display:block">
                             <label class="radio-inline" style="color:#000;text-align:left;"><input type="radio" style="text-align:left;width:auto;" name="optradio">Yes</label>
                             <label class="radio-inline" style="color:#000;text-align:left;"><input type="radio" style="text-align:left;width:auto;" name="optradio">No</label>
+                            <label class="radio-inline" style="color:#000;text-align:left;"><input type="radio" style="text-align:left;width:auto;" name="optradio">N/A</label>
                         </div>
                             <label for="prevcondition" style="color:#000;margin-bottom:4px;">What previous respiratory conditions have you had?</label>
                             <input type="text" name="prevcondition" placeholder="Previous respiratory conditions"/>
