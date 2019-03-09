@@ -1,3 +1,3 @@
 ## HackUConn 2019 Project
 
-Diagnoser Web App
+NetCare Web App
