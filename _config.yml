@@ -6,8 +6,8 @@ title:               Blog
 tagline:             Christopher's Blog
 url:                 http://christophergeiger3.github.io/
 paginate:            1
-baseurl:             "http://christophergeiger3.github.io/"
-#baseurl:             ""
+#baseurl:             "http://christophergeiger3.github.io/"
+baseurl:             ""
 
 # Assets
 #
