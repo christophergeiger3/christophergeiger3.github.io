@@ -1,0 +1,33 @@
+# Permalinks
+permalink:           pretty
+
+# Setup
+title:               Blog
+tagline:             Christopher's Blog
+url:                 http://christophergeiger3.github.io/
+paginate:            1
+baseurl:             "http://christophergeiger3.github.io/"
+#baseurl:             ""
+
+# Assets
+#
+# We specify the directory for Jekyll so we can use @imports.
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+# About/contact
+author:
+  name:              Christopher Geiger
+  #  url:               https://twitter.com/mdo
+  email:             christophergeiger3@gmail.com
+
+# Custom vars
+version:             2.0.0
+github:
+  #  repo:              https://github.com/poole/poole
+
+# Gems
+gems:
+  - jekyll-paginate
+  - jekyll-gist
